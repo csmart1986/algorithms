@@ -4,6 +4,7 @@
 // sorted array? no
 // can #s be negative? yes
 // what if empty array or # of values in array is < length?  return null
+// is array nested?  no
 
 function maxSubarraySum(arr, windowSize) {
     // arr is empty or doesnt contain minumum required # of values to fill window
