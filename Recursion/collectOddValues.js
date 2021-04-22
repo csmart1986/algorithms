@@ -3,8 +3,9 @@
 // Pure Recursion
 
 // fx that finds all odd values in an array, then return a new array with the odd values only
-    // can #s be negative?
-    // are values only integers?
+    // can #s be negative? yes
+    // are values only integers? yes
+    // if input is empty array? return []
 
 // HELPER METHOD
 // OUTER fx
