@@ -4,13 +4,14 @@
   // no array methods
   // values will only be integers
   // if receive empty array -> -1
+  // are all values unique? yes
 
 // BINARY search (only works if sorted!)
 function binarySearch(arr, num) {
     // put pointers at both ends of the array
     let start = 0;
     let end = arr.length - 1;
-    // put pointer at index of middle element of array (could use Math.ceil alternativly)
+    // put pointer at index of middle element of array (could use Math.ceil alternatively)
     let middleIdx = Math.floor(start + end / 2);
     // while element at middle pointer isn't equal to num AND start pointer hasn't passed the end of array...
     while (arr[middleIdx] !== num && start <= end) {
