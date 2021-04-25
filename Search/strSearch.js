@@ -1,6 +1,12 @@
 // naive version of string search
 // consider using KMP or Rabin Karp instead
 
+// fx that counts number of times a smaller string appears in the a longer string
+  // does casing matter? strings will be all lowercase
+  // what if both strings are empty strings? return 0
+  // what if just smaller string is empty string?  return 0
+  // are characters in string just letters?  yes
+
 function strSearch(mainStr, searchStr) {
     let count = 0;
     // loop over longer string and pull out every letter
@@ -22,9 +28,10 @@ function strSearch(mainStr, searchStr) {
     return count;
   }
   
-  //strSearch('dogcatdogcat', 'cat')
-  //strSearch('dogcacat', 'cat')
-  //strSearch('dogcatdog', '')
-  strSearch('dogcatdog', 'cats')
+  strSearch('dogcatdogcat', 'cat') //2
+  //strSearch('dogcacat', 'cat') //1
+  //strSearch('dogcatdog', '') // 0
+  //strSearch('dogcatdog', 'cats') //0
+  //strSearch('', '') // 0
 
   // time complexity O(n * m) where n is length of main string and m is length of search string
