@@ -1,4 +1,5 @@
 // naive version of string search
+// consider using KMP or Rabin Karp instead
 
 function strSearch(mainStr, searchStr) {
     let count = 0;
@@ -25,3 +26,5 @@ function strSearch(mainStr, searchStr) {
   //strSearch('dogcacat', 'cat')
   //strSearch('dogcatdog', '')
   strSearch('dogcatdog', 'cats')
+
+  // time complexity O(n * m) where n is length of main string and m is length of search string
