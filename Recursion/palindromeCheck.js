@@ -23,6 +23,7 @@ function palindromeCheck(str) {
     // have matched all the characters in the string -> is a palindrome
     return true;
 }
+// time complexity O(n) where n is array length, space complexity is O(1)
 
 // RECURSIVE 
 function palindromeCheck(str) {
