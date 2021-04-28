@@ -1,6 +1,7 @@
 // Given a 2D array (a matrix) of distinct integers and a target integer.  Each row in the matrix is sorted, and each column is also sorted.  The matrix doesn't necessarily have the same height and width.  Return an array of the row and column indices of the target integer if it is in the matrix.  Otherwise return [-1,-1].  
   // sorted ascending or descending? ascending
   // can matrix ever be empty? no
+  // only unique values? yes
 
 function sortedMatrix(matrix, target) {
 // set row pointer at 1st row
