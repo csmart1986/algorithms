@@ -10,9 +10,9 @@ function insertionSort(arr) {
     for (let i = 1; i < arr.length; i++) {
         // grab 2nd element in array (b/c sorted portion is considered 1st element in array at start of function)
         let currElem = arr[i];
-        // grab the index that comes before currElem index
+        // grab the index that comes directly before currElem index
         let j = i - 1;
-
+        // compare currElem to every element in array that comes before it
         // as long as element at index j is greater than currElem...
         while (j >= 0 && arr[j] > currElem) {
             // make the value of the element that comes AFTER element at index j equal to value at index j
@@ -20,7 +20,7 @@ function insertionSort(arr) {
             // move to the next preceding element so can compare it to currElem
             j--;
         }
-        // once while loop is done, insert currElem into sorted position
+        // once while loop is done, insert currElem into sorted position, go back to outer loop to repeat process on next element in array
         arr[j+1] = currElem;
     }
     return arr;
