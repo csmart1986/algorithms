@@ -32,6 +32,7 @@
   }
   
   // time complexity O(n**2) where n is length of array b/c compare every element to every other element in array
+  // space complexity O(1)
   
   selectionSort([34,22,10,19,17]) // [10,17,19,22,34]
   //selectionSort([8,5,2,-9,5,-6,0]) // [-9,-6,0,2,5,5,8]

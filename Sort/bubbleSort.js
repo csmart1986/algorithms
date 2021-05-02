@@ -29,7 +29,7 @@ function bubbleSort(arr) {
   
   // time complexity O(n**2) b/c nested loop so making n number of comparisions for each item in the array
       // but if already or nearly sorted than it is more like O(n) linear time (Best case)
-  
+  // space complexity (O(1))
   
   //bubbleSort([37,45,29,8])
   //bubbleSort([8,1,2,3])
