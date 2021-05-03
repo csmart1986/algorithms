@@ -14,3 +14,8 @@ Selection Sort
 - Best case time complexity => O(n**2) (w/sorted or almost sorted data still have to go through each time to find lowest item)
 - Space complexity => O(1) (everything is in-place, not creating new arrays)
 
+Merge Sort
+- Best/Avg/Worst case Time complexity => O(n log n)
+    - as n grows, the # of splits grows at rate of log n (where n is length of array)
+    - each time we split an array, we have O(n) comparisions when doing the merge
+- Space complexity => O(n)
