@@ -19,3 +19,8 @@ Merge Sort
     - as n grows, the # of splits grows at rate of log n (where n is length of array)
     - each time we split an array, we have O(n) comparisions when doing the merge
 - Space complexity => O(n)
+
+Quick Sort
+- Best/Avg time complexity => O(n log n)
+- Worst time complexity => O(n**2) (if pivot element is the minimum or maximum element every time)
+- Space Complexity = O(log n)
