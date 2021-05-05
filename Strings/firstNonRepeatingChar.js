@@ -2,6 +2,8 @@
 // the first non repeating character is the first character in the string that occurs only once
 // if the input string doesn't have any non repeating characters, your function should return -1
 
+// checking frequencies!  good use case for a HASH TABLE!!
+
 function firstNonRepeatingChar(str) {
     // create hash table to keep track of frequencies of letters in input string
     const hash = {};
