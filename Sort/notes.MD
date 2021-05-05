@@ -24,3 +24,9 @@ Quick Sort
 - Best/Avg time complexity => O(n log n)
 - Worst time complexity => O(n**2) (if pivot element is the minimum or maximum element every time)
 - Space Complexity = O(log n)
+
+Radix Sort 
+- Worse/Best/Avg time complexity => O(nk)
+    n = number of #'s in array (length of array)
+    k = length of those #s in the array (digit count)
+- Space complexity => O(n + k)
