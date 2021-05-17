@@ -40,25 +40,29 @@ class SinglyLinkedList {
     // creates REVERSE instance method
     reverse() {
       // create a temp variable for current node
-      let node = this.head;
+      let currNode = this.head;
+      let nextNode;
+      // starts null b/c there's initially no node in front of currNode
+      let prevNode = null;
+      
       // swap head and tail
       this.head = this.tail;
-      this.tail = node;
-      // the tail.next needs to be null at the start
-      let next = null;
-      let prev = null;
+      this.tail =  currNode;
+      
       for (let i = 0; i < this.length; i++) {
         // set next to be the value of the next node after current node
-        next = node.next;
-        // set the next property of current node to be previous node
-        node.next = prev;
-        // reassign previous to be the current node
-        prev = node; 
+        nextNode = currNode.next;
+        // set the next property of current node to be previous node (first iteration it's null)
+          // connecting current node with previous node through next pointer (different from nextNode!)
+        currNode.next = prevNode;
+        // reassign previous node to be the current node
+        prevNode = currNode; 
         // reassign current node to be the next node
-        node = next;
+        currNode = nextNode;
       }
       return this;
     }
+    
     // creates PRINT instance method => prints all the values of the list in an array form to help visualize
     print() {
       let arr = [];
