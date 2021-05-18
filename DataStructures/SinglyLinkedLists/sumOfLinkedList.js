@@ -21,7 +21,7 @@
     // create a new linked list with the digits of the sum
     // time & likely space complexity O(m + n) where m is length of one list and n is length of other list
 
-    
+
 class LinkedList {
     constructor(value) {
       this.value = value;
@@ -47,15 +47,15 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
         let val2 = currNode2 !== null ? currNode2.value : 0;
         // add the 2 values created by list plus any carry value
         let sumValue = val1 + val2 + carry;
-        // get the carry value that will be added to new list node
+        // get the remainder that will be the value of new list node
         let newValue = sumValue % 10;
-        // create new node with value of carry
+        // create new node this value
         let newNode = new LinkedList(newValue);
         // set next node after head of new list to be that new node
         newListCurrNode.next = newNode;
         // update the current node to be the last node we just created
         newListCurrNode = newNode;
-        // update the carry
+        // update carry to be value to carry over to next column
         carry = Math.floor(sumValue/10);
         // Go to next node in the list assuming there is a next node
         currNode1 = currNode1 !== null ? currNode1.next : null;
