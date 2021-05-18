@@ -14,6 +14,14 @@
     // 1 -> 9 -> 2 -> 2
         // 1742 + 549 = 2291
 
+
+// Brute Force
+    // loop through each list, pulling out individual digits to come up with the 2 numbers
+    // add the 2 numbers together to get a sum
+    // create a new linked list with the digits of the sum
+    // time & likely space complexity O(m + n) where m is length of one list and n is length of other list
+
+    
 class LinkedList {
     constructor(value) {
       this.value = value;
@@ -58,5 +66,5 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
 }
 
 // time and space complexity of O(max(n,m))
-// while loop runs a number of times equal to length of longest linked list
-// our new linked list will be at least the length of the longest linked list passed to the fx
+    // while loop runs a number of times equal to length of longest linked list
+    // our new linked list will be at least the length of the longest linked list passed to the fx
