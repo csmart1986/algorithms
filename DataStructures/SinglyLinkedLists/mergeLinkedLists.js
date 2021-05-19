@@ -9,6 +9,7 @@
 // mergeLinkedLists(headOne, headTwo) = 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 
     // the new head node with value 1
     
+// this is the ITERATIVE version.  There is a RECURSIVE version, too!
 
 class LinkedList {
   constructor(value) {
