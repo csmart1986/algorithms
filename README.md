@@ -1,1 +1,1 @@
-Algorithm, Coding and Design Questions
+Algorithms and Design Questions
