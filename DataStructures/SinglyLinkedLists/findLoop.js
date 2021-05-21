@@ -60,7 +60,7 @@ class LinkedList {
     // put either pointer back at head of list, but keep the other pointer at site of overlap
     slow = head;
     // while pointers haven't overlapped at origin of loop
-    while (fast !== second) {
+    while (fast !== slow) {
       slow = slow.next;
       // move fast pointer at same pace as slow pointer so amount of distance travelled is equal
       fast = fast.next;
