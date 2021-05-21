@@ -27,6 +27,17 @@
 //                     |     V
 //                     9<-8<-7
 
+// Find the total distance of the list
+    // Find the distances b/t:
+        // head and origin of loop (D)
+        // origin of loop and point where pointers overlap (P)
+        // point were pointers overlap and loop origin (remainder distance)
+// slow pointer travels distance of D + P to get to overlap point
+// fast pointer travels at twice the distance in same amount of time to get to overlap point-> 2D + 2P
+// Remainder = total distance - D - P
+    // plug in the values to get  remainder
+    // remainder distance ends up being the same distance as D distance
+
 class LinkedList {
     constructor(value) {
       this.value = value;
@@ -51,7 +62,7 @@ class LinkedList {
     // while pointers haven't overlapped at origin of loop
     while (fast !== second) {
       slow = slow.next;
-      // move fast pointer at same pace as slow pointer so amt of distance travelled is equal
+      // move fast pointer at same pace as slow pointer so amount of distance travelled is equal
       fast = fast.next;
     }
     // both nodes are now at origin of loop
