@@ -1,4 +1,4 @@
-// DFS RECURSIVE of a GRAPH
+// DFS ITERATIVE of a GRAPH
 
 // Graph class
 class Graph {
@@ -18,29 +18,30 @@ class Graph {
         // didn't include error handling like to make sure valid v1 or v2
     }
     
-    depthFirstRecursive(start) {
+    depthFirstIterative(start) {
       const result = [];
+      // make stack to keep track of vertices
+      const stack = [start];
+      // store visited vertices
       const visited = {};
-      // preserve meaning of 'this' outside of helper fx to be graph itself
-      const adjacencyList = this.adjacencyList;
+      // add starting vertex to stack and mark as visited
+      visited[start] = true;
+  
+      let currVertex;
       
-      // helper fx
-      (function dfs(vertex) {
-        // if no vertex...
-        if (!vertex) return null;
-        // mark vertex as visited by placing vertex into visited object
-        visited[vertex] = true;
-        // add vertex to results array
-        result.push(vertex);
-        // for each neighbor, check if it has already been visited
-        adjacencyList[vertex].forEach(neighbor => {
-          // hasn't been visited...
+      while (stack.length) {
+        // grab item in stack that was added last & add to results array
+        currVertex = stack.pop();
+        result.push(currVertex);
+        // check all its neighbors
+        this.adjacencyList[currVertex].forEach(neighbor => {
+          // if neighbor hasn't been visited, then visit it
           if (!visited[neighbor]) {
-            // recursive call on that neighbor
-            return dfs(neighbor)
+            visited[neighbor] = true;
+            stack.push(neighbor);
           }
         });
-      })(start);
+      }
       return result;
     }
   };
@@ -66,4 +67,6 @@ class Graph {
   console.log('With edges: ', g)
   
   
-  g.depthFirstRecursive('A')  // [A B D E C F]
+  g.depthFirstIterative('A') // [A C E F D B]
+  
+  // Recursive result [A B D E C F]
