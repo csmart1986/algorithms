@@ -71,3 +71,6 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
 // time and space complexity of O(max(n,m))
     // while loop runs a number of times equal to length of longest linked list
     // our new linked list will be at least the length of the longest linked list passed to the fx
+
+// The above algorithm is where digits are stored in reverse order
+// If digits are stored in direct order where most significant digit comes first, reverse the input lists and then proceed by parsing reverse lists starting from the head
