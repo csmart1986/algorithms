@@ -4,6 +4,9 @@
     // each linked list node has an integer VALUE as well as a NEXT node pointing to next node in list or to null if its the tail of list.  
     // value of each linked list node is always in range of 0 -9
 
+    // when 1 list is null, it means empty list
+    // sum could have extra carry of 1 at the end
+
 // sample input
     // linkedListOne = 2 -> 4 -> 7 -> 1
         // 1742
