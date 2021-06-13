@@ -60,45 +60,45 @@ class TreeNode {
       this.left = null,
       this.right = null
     }
+}
+  
+function flatten(node) {
+  // pass in root node
+  // return tail node of flattened out tree
+  return helper(node);
+}
+  
+function helper(node) {
+  // if no node
+  if (node === null) return;
+  // if leaf node, return node as is
+  if (node.left === null && node.right === null) {
+    return node;
   }
+  // for a given node, recursively flatten out the L and R subtrees and store their corresponding tail
+  let leftTail = helper(node.left);
+  let rightTail = helper(node.right);
+
+  // Re-do the connections b/t nodes (only if there is a L child for current node aka if there's a L subtree)
+  if (leftTail) {
+    // connect leftTail to list of nodes off of the right of root node
+    leftTail.right = node.right;
+    // sever connection b/t root node and right list of nodes.  Reconnect root node to the left list of nodes on the R side of root node.
+    node.right = node.left;
+    // want no nodes connected off the L side of root node
+    node.left = null;
+  };
   
-  function flatten(node) {
-    // pass in root node
-    // return tail node of flattened out tree
-    return helper(node);
+  // return the tail of the final flattened out tree rooted at the current node
+  if (rightTail) {
+    return rightTail
   }
+  else return leftTail
+}
   
-  function helper(node) {
-    // if no node
-    if (node === null) return;
-    // if leaf node, return node as is
-    if (node.left === null && node.right === null) {
-      return node;
-    }
-    // for a given node, recursively flatten out the L and R subtrees and store their corresponding tail
-    let leftTail = helper(node.left);
-    let rightTail = helper(node.right);
-  
-    // Re-do the connections b/t nodes (only if there is a L child for current node aka if there's a L subtree)
-    if (leftTail) {
-      // connect leftTail to list of nodes off of the right of root node
-      leftTail.right = node.right;
-      // sever connection b/t root node and right list of nodes.  Reconnect root node to the left list of nodes on the R side of root node.
-      node.right = node.left;
-      // want no nodes connected off the L side of root node
-      node.left = null;
-    };
-    
-    // return the tail of the final flattened out tree rooted at the current node
-    if (rightTail) {
-      return rightTail
-    }
-    else return leftTail
-  }
-  
-  // time complexity O(n) where n is # of nodes in tree 
-    // must process each node of tree exactly once
-  
-  // space complexity O(n) where n is number of nodes in longest branch
-    // length of longest branch reflects number of nodes in the recursion stack
-    // space is occupied by the callstack
+// time complexity O(n) where n is # of nodes in tree 
+  // must process each node of tree exactly once
+
+// space complexity O(n) where n is number of nodes in longest branch
+  // length of longest branch reflects number of nodes in the recursion stack
+  // space is occupied by the callstack
