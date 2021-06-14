@@ -50,7 +50,10 @@
 // Flatten out the L and R subtrees off of the root node (in preorder) using RECURSION
   // each subtree looks like a Linked list w/head and TAIL node
   // Result is 2 linked Lists
-// Need the tail end of the L linked list to attach it to the R linked list = LEFTTAIL node
+// Need the tail end of the L linked list (LEFTTAIL node) & attach it to the node at beginning of R linked list 
+    // don't want to lose connection to R linked list
+// Connect node at beginning of L linked list to be the R child node off of root node
+// Assign L child node off of root node to be null
 // RIGHTTAIL node = tail node of fully formed tree rooted at current node
 // make recursive call for current node to return the tail node of the flattened out tree
 
