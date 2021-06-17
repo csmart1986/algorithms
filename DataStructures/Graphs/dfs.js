@@ -1,3 +1,6 @@
+// Implement the DFS on the Node class, which takes in an empty array, traverses the tree using DFS approach, stores all the nodes' names in the input array, and returns it
+
+
 // DFS = Explore a specific branch all the way down before exploring the next branch
 
 // vertex = node in the graph
