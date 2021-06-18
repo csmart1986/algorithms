@@ -33,6 +33,8 @@ function getNthFib(n) {
   
   
   // RECURSIVE with MEMOIZATION (CACHING)
+    // MEMOIZATION = store results of expensive function calls and returning the cached result when the same inputs occur again
+    
     // solution for n is fib(n - 1) + fib(n - 2)
     // store solutions in a hash table and access them in O(1) time
       // hash = { n : solution}
