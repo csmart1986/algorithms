@@ -23,30 +23,39 @@ USER STORY: As a user, I want to be able to ...
 
 
 API DESIGN
-- want to go through some API to fetch some sort of data 
+- want to go through an API to fetch some sort of data 
+- API can be internal (aka microservice) or external (3rd party)
 - base the API design on the MVP
-- what parameters to consider?
-- Search Movies API
-- Reserve Seats API
+- what processes does this API need to facilitate?
+- input => output
+- parameter => return value
+- define a set of query parameters and what date each will return
 
 
 SEARCH MOVIES API
+- What return data is essential for an MVP => movie showings
+- useful parameters are search filters
 - Parameters
-  - keyword (string) to filter 
-  - city (string) to fiter by
-  - dateTime to filter by movie starttime
+  - keyword (string) => movies filtered by keyword
+  - city (string) => movies filtered by city
+  - dateTime => movies filtered by start time
+  - etc...
  
- - searchMovies(keyword, city, dateTime)
+ - API call = searchMovies(keyword, city, dateTime)
 
 
 RESERVE SEATS API
-- need to keep track of the users and their possible reservations
+- What return data is essential for an MVP => booking success or failure
+  - success = all info is valid and booking is added to database
+  - failure = if info is not accepted (for variety of reasons)
+- useful parameters are booking details
 - Parameters
   - sessionId (string) to keep track of specific user's reservation
   - movieId to reserve
   - seatsReserved (array)
   - showingId to reserve
-- return successful or failed depending on reservation status
+
+- API call = seatReservation(sessionId, movieId, showingId, seatsReserved)
 
 
 SCHEMA
@@ -59,6 +68,7 @@ ASSOCIATIONS
 - A movie has multiple showings
 - A showing has many bookings
 - Theater room has many seats (up to a limit) that can be reserved
+
 
 MODELS
 - City
