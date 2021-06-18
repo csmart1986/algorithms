@@ -1,3 +1,5 @@
+System Design = create a system based on a user prompt
+
 DESIGN FUNDAMENTALS
 
 1. Foundational knowledge
