@@ -1,5 +1,6 @@
 // Given an array of + integers representing the values of coins in your possesion, write a function that returns the minimum amount of change (the minimum sum of money) that you CANNOT create.
   // the given coins can have any + integer and aren't necessarily unique
+  // can mutate the input array
 
 // [ ] => 1
 // [7] => 1
