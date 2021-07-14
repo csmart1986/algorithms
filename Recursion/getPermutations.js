@@ -48,11 +48,31 @@
   //   }
   // }
 
-  function getPermutations(array) {
- 
+function getPermutations(array) {
+    permutations = [];
+    // call helper fx with array of remaining integers to construct a permutation, whatever permutation that we're constructing, and permutations array
+    helper(array, [], permutations);
+    return permutations;
 }
 
-// time complexity O(n * n!) where n is length of input array
+function helper(array, currPermutation, permutations) {
+    // if NO #s left in array AND there are #s in current permutation (don't want to add an empty array to permutations)
+    if (array.length === 0 && currPermutation.length > 0) {
+        permutations.push(currPermutation);
+    }
+
+    else {
+        for (let i = 0; i < array.length; i++) {
+        // create new array by removing curr # from array
+        const newArr = array.slice(0, i).concat(array.slice(i + 1));
+        // create new permutation by combining currPermutation array with number at idx i
+        const newPermutation = currPermutation.concat(array[i]);
+        helper(newArr, newPermutation, permutations);
+        }
+    }
+}
+
+// time complexity O(n**2 * n!) where n is length of input array
   // In FOR LOOP we're removing a # from array and creating a new permutation => both are O(n) operations
     // hit these lines of code as many times as call helper fx
 
